@@ -37,7 +37,7 @@ router.get('/edit',restrict, async function(req, res){
  })
  
  router.post('/del',restrict, async function(req, res){
-     await hoadonmodel.del(req.body.id_kh)
+     await hoadonmodel.del(req.body.id_hd)
      res.redirect('/admin/hoa_don');
  })
 module.exports = router
