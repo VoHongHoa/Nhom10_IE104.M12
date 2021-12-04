@@ -1,0 +1,43 @@
+<div class="d-flex mb-3" style="justify-content: center;">
+    <div class="card" style="width: 70%">
+        <div class="card-header">
+            <h1>Giỏ Hàng</h1>
+        </div>
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Hình ảnh</th>
+                    <th>Tên sản phẩm</th>
+                    <th>Số lượng</th>
+                    <th>Giá</th>
+                    <th>Xóa 1 sản phẩm </th>
+                    <th>Lựa chọn</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                {{#each session.cart.items}}
+                    <tr>
+                        <td><img class="img-fluid" src="/images/product/p{{this.item.id_sp}}/{{this.item.id_sp}}.png" style="width:80px"></td>
+                        <td><p>{{this.item.ten_sp}}</p></td>
+                        <td>{{this.qty}}</td>
+                        <td><p>{{this.item.gia_moi}} <span class="close">đ</span></p></td>
+                        <td><a href="/web/remove/{{this.item.id_sp}}">Xóa</a></td>
+                        <td><a name="" id="" class="btn btn-danger link" href="/web/delete/{{this.item.id_sp}}" role="button">Xóa</a></td>
+                    </tr>
+                {{/each}}
+                </tbody>
+            </table>
+        </div>
+        <div class="card-footer">
+            <div style="float: right;">
+                <h3 class="mb-3">Tổng tiền: <span> {{session.cart.totalPrice}}</span> đ</h3>
+                 <a class="btn btn-dark" href="/web/buy" role="button">Mua</a>
+                
+            </div>
+            <a style="width:200px" class="btn btn-dark link" href="/web" role="button"><i class="fas fa-backward"> Quay trở lại mua sắm</i></a>
+        </div>
+    </div>
+
+</div>

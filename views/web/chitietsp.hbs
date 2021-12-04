@@ -1,0 +1,145 @@
+<section>
+    {{#each product}}
+    <div class="container-fluid">
+        <div class="product-top">
+           <a href="/web"><p>Trang chủ</p></a><span>/</span>
+             <a href="/web/san_pham"><p>Sản phẩm</p></a><span>/</span>
+            <p style="color: rgb(228, 147, 147)">{{ten_sp}}</p>
+        </div>
+        <div class="product-content">
+            <div class="row">
+                <div class="col-8">
+                    <div class="product-content-left">
+                        <div class="product-content-left-main-img">
+                            <img src="/images/product/p{{id_sp}}/{{id_sp}}.png" alt="" style="width:100%">
+                        </div>
+                        <div class="product-content-left-img">
+                            <img src="/images/product/p{{id_sp}}/{{id_sp}}.png" alt="ảnh chính">
+                            <img src="/images/product/p{{id_sp}}/{{id_sp}}_1.png" alt="ảnh phụ 2">
+                            <img src="/images/product/p{{id_sp}}/{{id_sp}}_2.png" alt="anh phu 3">
+                            <img src="/images/product/p{{id_sp}}/{{id_sp}}_3.png" alt="anh phu 4">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="product-content-right">
+                        <div class="product-content-right-name" style="font-weight: bold;">
+                            <h1>{{ten_sp}}</h1>
+                        </div>
+                        <div class="product-content-right-price">
+                            <p style="font-weight: bold;">Giá sản phẩm:{{gia_moi}}</p>
+                        </div>
+                        <form action="/web/add/{{id_sp}}" class="form_fomat">
+
+                            <div>
+                                <p style="font-weight: bold;">Số lượng:</p>
+                                <input type="number" min="0" value="1" name="soluong">
+                            </div>
+                            <div class="product-content-right-color">
+                                <p style="font-weight: bold;">Màu sắc:</p>
+                                <div class="khoi_mau_sp mb-2" style="width:40%">
+                                    <div class="mau_sp" style="background-color: white;">
+                                        <p class="ten_mau" style="display: none;">Trắng</p>
+                                    </div>
+                                    <div class="mau_sp" style="background-color: black;">
+                                        <p class="ten_mau" style="display: none;">Đen</p>
+                                    </div>
+                                    <div class="mau_sp" style="background-color: red;">
+                                        <p class="ten_mau" style="display: none;">Đỏ</p>
+                                    </div>
+                                    <div class="mau_sp" style="background-color: yellow;">
+                                        <p class="ten_mau" style="display: none;">Vàng</p>
+                                    </div>
+                                    <div class="mau_sp" style="background-color: Blue">
+                                        <p class="ten_mau" style="display: none;">Xanh</p>
+                                    </div>
+                                </div>
+                                <input type="text" min="0" value="{{mau_sp}}" name="color" class="hien_thi_mau">
+                            </div>
+                            <div class="product-content-right-size">
+                                <p style="font-weight: bold;">Kích thước:</p>
+                                <div class="khoi_size_sp mb-2" style="width:40%">
+                                    <div class="size_sp">
+                                        <p class="ten_size">S</p><span class="so_size">1</span>
+                                    </div>
+                                    <div class="size_sp">
+                                        <p class="ten_size">M</p><span class="so_size">2</span>
+                                    </div>
+                                    <div class="size_sp">
+                                        <p class="ten_size">L</p><span class="so_size">3</span>
+                                    </div>
+                                    <div class="size_sp">
+                                        <p class="ten_size">XL</p><span class="so_size">4</span>
+                                    </div>
+                                </div>
+                                <input type="number" min="0" value="{{size_sp}}" name="size" class="hien_thi_size">
+                            </div>
+                            <button type="submit" class="btn btn-dark mt-3" style="width:40%"><i
+                                    class="fas fa-cart-plus" style="margin-right:20px;"></i>Thêm</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</section>
+{{!-- <section>
+    <div class="container-fluid">
+        <div class="logan">
+            <p style="font-weight: bold;">SẢN PHẨM LIÊN QUAN</p>
+        </div>
+        <div class="row">
+            <!---------------- ảnh 1 ------------------------>
+            <div class="col-3">
+                <div class="detail-product">
+                    <img class="picture" src="../public/images/imageKM/5.png" alt="shirt5">
+                    <img class="more" src="../public/images/imageKM/5p.png" alt="more5">
+                    <div class="picture-title">
+                        <a href="/detail-product.html" style="font-size: 30px;">Áo phông nam APHTK264</a>
+                        <span><del style="color: grey;font-size: 18px;">990.000đ</del> <ins
+                                style="color: red;font-size: 20px;">495.000đ</ins></span>
+                    </div>
+                </div>
+            </div>
+            <!---------------- ảnh 5 ------------------------>
+            <div class="col-3">
+                <div class="detail-product">
+                    <img class="picture" src="../public/images/imageKM/5.png" alt="shirt5">
+                    <img class="more" src="../public/images/imageKM/5p.png" alt="more5">
+                    <div class="picture-title">
+                        <a href="/detail-product.html" style="font-size: 30px;">Áo phông nam APHTK264</a>
+                        <span><del style="color: grey;font-size: 18px;">990.000đ</del> <ins
+                                style="color: red;font-size: 20px;">495.000đ</ins></span>
+                    </div>
+                </div>
+            </div>
+            <!---------------- ảnh 9 ------------------------>
+            <div class="col-3">
+                <div class="detail-product">
+                    <img class="picture" src="../public/images/imageKM/5.png" alt="shirt5">
+                    <img class="more" src="../public/images/imageKM/5p.png" alt="more5">
+                    <div class="picture-title">
+                        <a href="/detail-product.html" style="font-size: 30px;">Áo phông nam APHTK264</a>
+                        <span><del style="color: grey;font-size: 18px;">990.000đ</del> <ins
+                                style="color: red;font-size: 20px;">495.000đ</ins></span>
+                    </div>
+                </div>
+            </div>
+            <!---------------- ảnh 11 ------------------------>
+            <div class="col-3">
+                <div class="detail-product">
+                    <img class="picture" src="../public/images/imageKM/5.png" alt="shirt5">
+                    <img class="more" src="../public/images/imageKM/5p.png" alt="more5">
+                    <div class="picture-title">
+                        <a href="/detail-product.html" style="font-size: 30px;">Áo phông nam APHTK264</a>
+                        <span><del style="color: grey;font-size: 18px;">990.000đ</del> <ins
+                                style="color: red;font-size: 20px;">495.000đ</ins></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    
+</section> --}}

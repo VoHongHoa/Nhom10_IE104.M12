@@ -1,0 +1,71 @@
+<header class="container-fluid">
+    <div class="header-1">
+        <div class="row">
+            <div class="col-2">
+                <div class="logo">
+                    <a href="/web">
+                        <img src="/images/home/logo.jpg" alt="this is logo">
+                    </a>
+                </div>
+            </div>
+            <div class="col-8">
+                <form action="/web/search">
+                    <div style="position: relative;">
+                        <input style="padding-left: 8px;" placeholder="search" type="text" size="60" name="searchtext" autofocus>
+                        <button type="submit" style="position: absolute; right:0;width:10%"><i class="fas fa-search"></i></button>
+                    </div>
+                </form>
+                {{#if lcIsAuthenticated}}
+                <div class="dropdown">
+                    <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        Welcome, {{lcAuthUser.ten_kh}}!
+                        </button>
+                            <ul class="dropdown-menu" style="width:100%" aria-labelledby="dropdownMenuButton1">
+                                <li><a class="dropdown-item" href="/web/profile"><i style="font-size: 16px; margin-right: 8px" class="fas fa-user fa-2x"></i>Profile</a></li>
+                                <li>
+                                    <form action="/web/dang_xuat" method="post">
+                                        <button class="dropdown-item" type="submit" name="your_name" value="your_value" class="btn-link"><i style="font-size: 16px; margin-right: 6px" class="fas fa-sign-out-alt"></i>Đăng xuất</button>
+                                    </form>
+                                </li>
+                            </ul>
+                        </div>
+                {{else}} 
+                <div class="btn">
+                    <a href="/web/dangnhap" class="js-login">Đăng nhập</a>
+                    <a href="/web/dang_ky" class="js-signup">Đăng ký</a>
+                </div>
+                {{/if}}
+            </div>
+            <!--<div class="col-3">
+             </div>-->
+            <div class="col-2">
+                <div class="icon">
+                    <a href="/web/cart"><i class="fas fa-shopping-bag fa-2x"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav>
+        <ul class="menu">
+            <li> <a href="/web">Giới thiệu</a></li>
+            <li> <a href="/web/san_pham">Sản phẩm</a>
+                <ul class="sub-menu">
+                    {{#each loai_sp}}
+                        <li><a  class="" href="/web/byCat/{{id_loai_sp}}" role="button">{{ten_loai_sp}}</a></li>
+                    {{/each}}
+                </ul>
+            </li>
+            <li><a href="javascript:;">Khuyến mãi</a>
+                <ul class="sub-menu">
+                    {{#each gia_tri_km}}
+                        <li><a  class="" href="/web/KM/{{giam_gia_sp}}" role="button">Khuyến mãi {{giam_gia_sp}}%</a></li>
+                    {{/each}}
+                </ul>
+            </li>
+            <li><a href="/web/tin_tuc">Tin tức</a></li>
+            <li><a href="/web/he_thong_shop">Hệ thống cửa hàng</a></li>
+            <li><a href="/web/tuyen_dung">Tuyển dụng</a></li>
+        </ul>
+    </nav>
+
+</header>
